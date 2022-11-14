@@ -1,0 +1,284 @@
+/*всі обнулюючі*/
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+  
+  *, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  :focus, :active {
+    outline: none;
+  }
+  
+  a:focus, a:active {
+    outline: none;
+  }
+  
+  nav, footer, header, aside {
+    display: block;
+  }
+  
+  html, body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    font-family: 'Roboto', sans-serif;
+    background-color: #e9e9e9;
+  }
+  
+  input, button, textarea {
+    font-family: inherit;
+  }
+  
+  input::-ms-clear {
+    display: none;
+  }
+  
+  button {
+    cursor: pointer;
+  }
+  button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+  
+  a, a:visited {
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: none;
+  }
+  
+  ul li {
+    list-style: none;
+  }
+  
+  img {
+    vertical-align: top;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: 400;
+  }
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700;900&display=swap');
+
+
+
+/* function button(){
+	document.querySelector(".navbar-toggler").classList.toggle("active");
+	document.querySelector(".sub-menu-bar").classList.toggle("show");
+}
+
+let arrowMenu1 = document.querySelector('.katalog_sitebar-box-bottom-body-1');
+let arrow1 = document.querySelector('.katalog_sitebar-box-price-line-1');
+
+
+arrow1.addEventListener('click', () => {
+    arrow1.classList.toggle('active');
+    arrowMenu1.classList.toggle('active');
+});
+
+let arrow2 = document.querySelector('.katalog_sitebar-box-price-line-2');
+let arrowMenu2 = document.querySelector('.katalog_sitebar-box-bottom-body-2');
+
+arrow2.addEventListener('click', () => {
+    arrow2.classList.toggle('active');
+    arrowMenu2.classList.toggle('active');
+});
+
+
+
+
+
+let showCategory = document.querySelector('.katalog_content-header-body-category-show');
+let categoryBody = document.querySelector('.katalog_content-header-body-categoryes');
+
+showCategory.addEventListener('click', () => {
+    categoryBody.classList.toggle('show');
+});
+let showCategory2 = document.querySelector('#katalog-line');
+let categoryBody2 = document.querySelector('#katalog-body');
+
+showCategory2.addEventListener('click', () => {
+    categoryBody2.classList.toggle('show');
+});
+
+
+
+
+let tab = document.querySelector('.katalog-cubTab');
+let tab2 = document.querySelector('.katalog-cubTab2');
+let prodacts = document.querySelector('.katalog_content-products');
+
+tab.addEventListener('click', () => {
+    tab.classList.add('active');
+    prodacts.classList.remove('katalog_content-products');
+    prodacts.classList.add('katalog_content-products2');
+    if(document.querySelector('.active2')){
+        tab2.classList.remove('active2');
+    }
+    
+})
+tab2.addEventListener('click', () => {
+    tab2.classList.add('active2');
+    prodacts.classList.remove('katalog_content-products2');
+    prodacts.classList.add('katalog_content-products');
+    if(document.querySelector('.active')){
+        tab.classList.remove('active');
+    }
+});
+
+//////////////
+
+let a = [34, 2, 13, 34, 56, 87, 6, 6, 56, 858, 854, 34];
+
+for (let i = 0; i < a.length; i++) {
+    for(let j = i; j < a.length; j++){
+        if(a[i] > a[j]) {
+            let temp = a[i];
+            a[i] = a[j];
+            a[j] = temp;
+        }
+    }
+}
+
+document.querySelector('#sort-asc').onclick = mySort;
+document.querySelector('#sort-desc').onclick = mySortDesc;
+
+function mySort() {
+    let nav = document.querySelector('.katalog_content-products');
+    for(let i = 0; i < nav.children.length; i++){
+        for(let j = i; j < nav.children.length; j++) {
+            if(+nav.children[i].getAttribute('data-sort') > +nav.children[j].getAttribute('data-sort')){
+                replacedNode = nav.replaceChild(nav.children[j], nav.children[i]);
+                insertAfter(replacedNode, nav.children[i]);
+            }
+        }
+    }
+}
+function mySortDesc() {
+    let nav = document.querySelector('.katalog_content-products');
+    for(let i = 0; i < nav.children.length; i++){
+        for(let j = i; j < nav.children.length; j++) {
+            if(+nav.children[i].getAttribute('data-sort') < +nav.children[j].getAttribute('data-sort')){
+                replacedNode =nav.replaceChild(nav.children[j], nav.children[i]);
+                insertAfter(replacedNode, nav.children[i]);
+            }
+        }
+    }
+}
+
+document.querySelector('#sort-asc2').onclick = mySort;
+document.querySelector('#sort-desc2').onclick = mySortDesc;
+
+function mySort() {
+    let nav = document.querySelector('.katalog_content-products');
+    for(let i = 0; i < nav.children.length; i++){
+        for(let j = i; j < nav.children.length; j++) {
+            if(+nav.children[i].getAttribute('data-sort') > +nav.children[j].getAttribute('data-sort')){
+                replacedNode = nav.replaceChild(nav.children[j], nav.children[i]);
+                insertAfter(replacedNode, nav.children[i]);
+            }
+        }
+    }
+}
+function mySortDesc() {
+    let nav = document.querySelector('.katalog_content-products');
+    for(let i = 0; i < nav.children.length; i++){
+        for(let j = i; j < nav.children.length; j++) {
+            if(+nav.children[i].getAttribute('data-sort') < +nav.children[j].getAttribute('data-sort')){
+                replacedNode =nav.replaceChild(nav.children[j], nav.children[i]);
+                insertAfter(replacedNode, nav.children[i]);
+            }
+        }
+    }
+}
+
+function insertAfter(elem, refElem) {
+    return refElem.parentNode.insertBefore(elem, refElem.nextSibling);
+}
+
+
+
+function app() {
+    const buttons = document.querySelectorAll('.katalog_sitebar-box-sect');
+    const cards = document.querySelectorAll('.katalog_content-main-product');
+
+    
+
+    function filter (category, items) {
+        items.forEach((item) => {
+            const isItemFiltered = item.classList.contains(category)
+            if (isItemFiltered) {
+                item.classList.remove('hide');
+            } else {
+                item.classList.add('hide');
+
+            }
+        })
+    }
+
+    buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+            const currentCategory = button.dataset.filter
+            filter(currentCategory, cards)
+        })
+    })
+}
+
+app();
+
+
+
+function tabColor() {
+    const tabNav = document.querySelectorAll('.katalog_sitebar-box-sect');
+
+    tabNav.forEach(item => {
+        item.addEventListener('click', selectTabNav);
+    });
+
+    function selectTabNav() {
+        tabNav.forEach(item => {
+            item.classList.remove('tab-active');
+        });
+        this.classList.add('tab-active');
+    }
+};
+
+tabColor();
+
+
+window.onload = () => {
+    let input = document.querySelector('#filter')
+    input.oninput = function() {
+        let value = this.value.trim();
+        let list = document.querySelectorAll('.katalog_content-main-product');
+
+        if (value != '') {
+            list.forEach(elem => {
+                if(elem.innerText.search(value) == -1) {
+                    elem.classList.add('hide');
+                }
+            })
+        } else {
+            list.forEach(elem => {
+                elem.classList.remove('hide');
+            })
+        }
+    };
+};
+
+ */
