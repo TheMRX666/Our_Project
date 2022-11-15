@@ -1,5 +1,7 @@
 # Our_Project
 Сайт з розкладом
+Pages: https://themrx666.github.io/Our_Project/
+
 
 Команда: Яковенко Денис, Мартиненко Руслан, Солох Давiд 
 
